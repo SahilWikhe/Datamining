@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My Portfolio</title>
+  <style>
+    /* Reset & Basic Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background: #121212; /* Matte black background */
+      color: #e0e0e0;
+    }
+    a {
+      color: #4da6ff;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    /* Header Styles with Black Gradient */
+    header {
+      background: linear-gradient(45deg, #000, #333);
+      color: #fff;
+      padding: 20px 0;
+      text-align: center;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+    }
+    nav ul li {
+      margin: 0 15px;
+    }
+    /* Main Container */
+    .container {
+      width: 90%;
+      max-width: 1000px;
+      margin: 20px auto;
+      padding: 20px;
+      background: #1e1e1e; /* Slightly lighter than the body */
+      border-radius: 5px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+    }
+    /* Section Headings */
+    h2 {
+      margin-bottom: 15px;
+      border-bottom: 2px solid #4da6ff;
+      display: inline-block;
+      padding-bottom: 5px;
+      color: #fff;
+    }
+    /* Project Card */
+    .project {
+      border: 1px solid #333;
+      padding: 20px;
+      border-radius: 5px;
+      margin-bottom: 30px;
+      background: #262626;
+    }
+    .project h3 {
+      margin-bottom: 10px;
+      color: #fff;
+    }
+    .project ul {
+      margin-left: 20px;
+      margin-bottom: 15px;
+    }
+    /* Code Block Styling */
+    pre {
+      background: #272822;
+      color: #f8f8f2;
+      padding: 15px;
+      border-radius: 5px;
+      overflow-x: auto;
+      font-size: 0.9em;
+      line-height: 1.4;
+    }
+    /* Images Styling */
+    .project img {
+      max-width: 100%;
+      height: auto;
+      margin: 10px 0;
+      border: 1px solid #444;
+      border-radius: 5px;
+    }
+    /* Data Mining Section Styling */
+    .data-mining-section details {
+      background: #333;
+      margin: 10px 0;
+      border-radius: 5px;
+      padding: 10px;
+    }
+    .data-mining-section summary {
+      font-weight: bold;
+      cursor: pointer;
+      outline: none;
+      padding: 5px;
+    }
+    .data-mining-section summary::-webkit-details-marker {
+      display: none;
+    }
+    .data-mining-section details[open] summary {
+      color: #4da6ff;
+    }
+    .data-mining-section .content {
+      padding: 10px 0 0 15px;
+    }
+    /* Footer */
+    footer {
+      background: #000;
+      color: #fff;
+      text-align: center;
+      padding: 15px 0;
+      margin-top: 20px;
+      box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.7);
+    }
+    /* Responsive Navigation */
+    @media (max-width: 600px) {
+      nav ul {
+        flex-direction: column;
+      }
+      nav ul li {
+        margin: 10px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header / Navigation -->
+  <header>
+    <h1>My Portfolio</h1>
+    <nav>
+      <ul>
+        <li><a href="#about">About Me</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main Content Container -->
+  <div class="container">
+    <!-- About Section -->
+    <section id="about">
+      <h2>About Me</h2>
+      <p>
+        Hi, I'm Sahil Wikhe – a data analyst and data mining enthusiast. I love turning raw data into meaningful insights. This portfolio showcases some of my projects and analyses.
+      </p>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+      <h2>Projects</h2>
+      <!-- Global Super Store Dataset Project -->
+      <div class="project">
+        <h3>Global Super Store Dataset Analysis</h3>
+        <p><strong>Author:</strong> Sahil Wikhe</p>
+        <p><strong>Project 1: Data Mining</strong></p>
+        <p>
+          In this project, the Global Super Store dataset is analyzed to answer several business questions:
+        </p>
+        <ul>
+          <li>What are the top-performing product categories and regions in terms of sales and profitability?</li>
+          <li>How does discounting affect profitability, and is there an optimal discount rate?</li>
+          <li>What shipping methods are most effective, and do they vary by region?</li>
+          <li>Are there any noticeable trends in sales performance over time (seasonality, yearly growth)?</li>
+        </ul>
+        <p>
+          The project uses Python along with libraries like <code>pandas</code>, <code>numpy</code>, <code>matplotlib</code>, and <code>seaborn</code> to clean the data, perform exploratory analysis, and generate insightful visualizations.
+        </p>
+        <h4>Visualizations:</h4>
+        <p>Below are some visualizations generated from the analysis:</p>
+        <img src="Category.png" alt="Total Sales and Profit by Category">
+        <img src="profit.png" alt="Discount vs. Profit Margin">
+        <img src="shipping.png" alt="Total Sales by Shipping Method">
+        <img src="yearly.png" alt="Yearly Sales Growth Percentage">
+        <h4>Code Overview:</h4>
+        <p>A snippet of the code used in the analysis is shown below. For the complete code, please visit my <a href="https://github.com/yourusername/your-repo" target="_blank">GitHub repository</a>.</p>
+        <pre><code>import pandas as pd
+import numpy as np
+
+# Load the dataset
+df = pd.read_csv("Global_Superstore2.csv", encoding="latin1")
+df = df.dropna(axis=1)
+
+# Analyze Sales and Profit by Category
+import matplotlib.pyplot as plt
+import seaborn as sns
+plt.style.use('ggplot')
+category_sales = df.groupby("Category")[["Sales", "Profit"]].sum().sort_values("Sales", ascending=False)
+category_sales.plot(kind="bar")
+plt.title("Total Sales and Profit by Category")
+plt.show()
+
+# More analysis code follows...
+</code></pre>
+        <!-- Organized Data Mining Process Section -->
+        <h4>Data Mining Process &amp; Business Questions</h4>
+        <div class="data-mining-section">
+          <details>
+            <summary>1. Business Understanding</summary>
+            <div class="content">
+              <p><strong>Objective:</strong> Analyze sales, profits, and operational efficiency to optimize strategies.</p>
+              <ul>
+                <li>Identify top-performing product categories and regions.</li>
+                <li>Determine the effect of discounting on profitability.</li>
+                <li>Examine the effectiveness of various shipping methods.</li>
+                <li>Detect trends in sales performance over time.</li>
+              </ul>
+            </div>
+          </details>
+          <details>
+            <summary>2. Data Understanding</summary>
+            <div class="content">
+              <p>
+                The dataset contains 51,290 rows and 24 columns. Key columns include <code>Sales</code>, <code>Profit</code>, <code>Discount</code>, <code>Ship Mode</code>, and <code>Category</code>. Missing values in the <code>Postal Code</code> column are dropped as they are not relevant.
+              </p>
+            </div>
+          </details>
+          <details>
+            <summary>3. Data Preparation</summary>
+            <div class="content">
+              <ul>
+                <li>Drop columns with excessive missing values (e.g., <code>Postal Code</code>).</li>
+                <li>Convert date columns (<code>Order Date</code> and <code>Ship Date</code>) to <code>datetime</code> format.</li>
+                <li>Create derived metrics:
+                  <ul>
+                    <li><code>Profit Margin</code> = Profit / Sales</li>
+                    <li>Discount bins for analysis</li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </details>
+          <details>
+            <summary>4. Exploratory Data Analysis (EDA)</summary>
+            <div class="content">
+              <ul>
+                <li><strong>Sales and Profit Analysis:</strong> Aggregate data by category and region using bar charts and heatmaps.</li>
+                <li><strong>Discount Analysis:</strong> Use scatter plots and line charts to explore discount vs. profitability.</li>
+                <li><strong>Shipping Mode Analysis:</strong> Compare sales by shipping method and regional variations using boxplots.</li>
+                <li><strong>Time Series Analysis:</strong> Plot monthly trends and yearly growth rates to uncover patterns.</li>
+              </ul>
+            </div>
+          </details>
+          <details>
+            <summary>5. Evaluation</summary>
+            <div class="content">
+              <ul>
+                <li>Technology is the top-performing category; the Central region is most profitable.</li>
+                <li>High discounts can lead to negative profit margins, suggesting the need to find an optimal discount range.</li>
+                <li>Standard Class is the most common shipping method, though costs vary by region.</li>
+                <li>Sales display seasonality with significant peaks during certain months.</li>
+              </ul>
+            </div>
+          </details>
+          <details>
+            <summary>6. Deployment</summary>
+            <div class="content">
+              <p>
+                The visualizations and insights can be exported for presentations or integrated into dashboards for continuous monitoring.
+              </p>
+            </div>
+          </details>
+        </div>
+      </div>
+      <!-- Additional project cards can be added here -->
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>If you would like to get in touch, feel free to email me at: <a href="mailto:youremail@example.com">youremail@example.com</a></p>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Sahil Wikhe. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>
